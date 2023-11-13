@@ -64,5 +64,9 @@ class CategorieController extends Controller
     return response()->json('Catégorie supprimée !');
         //
     }
-   
+    public function showSCategorieByCAT($idcat)
+    {
+         $Scategorie= Scategorie::where('categorieID', $idcat)->with('categories')->get();
+        return response()->json($Scategorie);
+    }
 }

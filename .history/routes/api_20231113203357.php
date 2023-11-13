@@ -28,7 +28,3 @@ Route::middleware('api')->group(function () {
     });
     Route::get('/scat/{idcat}',
     [ScategorieController::class,'showSCategorieByCAT']);
-
- Route::middleware('api')->group(function () {
-        Route::resource('articles', ArticleController::class);
-        });

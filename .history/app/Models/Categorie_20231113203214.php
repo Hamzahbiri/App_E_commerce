@@ -12,10 +12,7 @@ class Categorie extends Model
     protected $fillable=[
         'nomCategorie','imageCategorie'
     ];
-
-    
-    public function scategories()
-{
-return $this->hasMany(Scategorie::class ,"categorieID");
-}
+    $scategorie = Scategorie::find($id);
+$scategorie->delete();
+return response()->json('Scategorie supprimée !');
 }
