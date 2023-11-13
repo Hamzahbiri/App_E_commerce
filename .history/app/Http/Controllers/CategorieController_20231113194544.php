@@ -46,22 +46,16 @@ class CategorieController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, Categorie $categorie)
     {
         //
-        $categorie = Categorie::find($id);
-    $categorie->update($request->all());
-    return response()->json($categorie, 200);   
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(Categorie $categorie)
     {
-        $categorie = Categorie::find($id);
-    $categorie->delete();
-    return response()->json('Catégorie supprimée !');
         //
     }
 }

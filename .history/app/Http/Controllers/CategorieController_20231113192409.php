@@ -23,45 +23,34 @@ class CategorieController extends Controller
     public function store(Request $request)
     {
         $categorie = new Categorie([
-            'nomCategorie'=>$request->input('nomCategorie'),
-            'imageCategorie'=>$request->input('imageCategorie')
+            'nomCategrie'=>$request->input('nomCategorie');
+            'nomCategrie'=>$request->input('nomCategorie');
 
-        ]);
-        $categorie->save();
-        return response()->json($categorie,201);
+            ])
         //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Categorie $categorie)
     {
-        $categorie = Categorie::find($id);
-        return response()->json($categorie);
-
         //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, Categorie $categorie)
     {
         //
-        $categorie = Categorie::find($id);
-    $categorie->update($request->all());
-    return response()->json($categorie, 200);   
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(Categorie $categorie)
     {
-        $categorie = Categorie::find($id);
-    $categorie->delete();
-    return response()->json('Catégorie supprimée !');
         //
     }
 }

@@ -50,8 +50,8 @@ class CategorieController extends Controller
     {
         //
         $categorie = Categorie::find($id);
-    $categorie->update($request->all());
-    return response()->json($categorie, 200);   
+$categorie->update($request->all());
+return response()->json($categorie, 200);   
     }
 
     /**
@@ -60,8 +60,8 @@ class CategorieController extends Controller
     public function destroy($id)
     {
         $categorie = Categorie::find($id);
-    $categorie->delete();
-    return response()->json('Catégorie supprimée !');
+$categorie->delete();
+return response()->json('Catégorie supprimée !');
         //
     }
 }
